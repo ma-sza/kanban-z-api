@@ -46,7 +46,7 @@ function Column(id, name) {
 }
 Column.prototype = {
   createCard: function(card) {
-    this.element.children('ul').append(card.element);
+    this.$element.children('ul').append(card.$element);
   },
   deleteColumn: function() {
     var self = this;
@@ -54,7 +54,7 @@ Column.prototype = {
       url: baseUrl + '/column/' + self.id,
       method: 'DELETE',
       success: function(response) {
-        self.element.remove();
+        self.$element.remove();
       }
     });
   }
